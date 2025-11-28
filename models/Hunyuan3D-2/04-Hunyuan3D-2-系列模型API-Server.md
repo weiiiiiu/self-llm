@@ -36,7 +36,7 @@ python3 api_server.py --host 0.0.0.0 --port 8080
     ```
     
 
-![image%206.png](images/image%206.png)
+<!-- ![image%206.png](images/image%206.png) Image missing -->
 
 向服务器发送将图像转换为无纹理的3D的请求
 
@@ -63,4 +63,4 @@ rm data.json
 
 可以在项目路径下得到输出的glb文件
 
-![image%207.png](images/image%207.png)
+<!-- ![image%207.png](images/image%207.png) Image missing -->

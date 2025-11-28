@@ -6,7 +6,7 @@
 
 接下来打开刚刚租用服务器的 JupyterLab，并且打开其中的终端开始环境配置、模型下载和运行演示。  
 
-![开启机器配置选择](images/autodl_config.png)
+<!-- <!-- ![开启机器配置选择](images/autodl_config.png) Image missing --> Image missing -->
 
 pip 换源加速下载并安装依赖包
 

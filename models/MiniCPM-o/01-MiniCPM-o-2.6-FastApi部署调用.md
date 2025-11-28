@@ -300,7 +300,7 @@ send_request({
 
 样例图片如下图：
 
-<img src="images/01-6.jpg" width = "300" height = "300" alt="image.jpg" align=center />
+<img src="./images/01-6.jpg" width = "300" height = "300" alt="image.jpg" align=center />
 
 运行命令进行单张图片单轮对话：
 
@@ -358,7 +358,7 @@ if response.status_code == 200:
 
 样例图片同上图的猫猫：
 
-<img src="images/01-6.jpg" width = "300" height = "300" alt="image.jpg" align=center />
+<img src="./images/01-6.jpg" width = "300" height = "300" alt="image.jpg" align=center />
 
 运行命令进行单张图片多轮对话：
 
@@ -415,7 +415,7 @@ send_request({
 
 样例图片同上的猫猫和新的勾勾：
 
-<img src="images/01-6.jpg" width = "300" height = "300" alt="image.jpg" align=center /> <img src="images/01-9.jpg" width = "300" height = "300" alt="image.jpg" align=center />
+<img src="./images/01-6.jpg" width = "300" height = "300" alt="image.jpg" align=center /> <img src="./images/01-9.jpg" width = "300" height = "300" alt="image.jpg" align=center />
 
 运行命令进行单张图片多轮对话：
 

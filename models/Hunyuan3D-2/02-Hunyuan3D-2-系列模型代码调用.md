@@ -223,8 +223,8 @@ print("--- %s seconds ---" % (time.time() - start_time))
 
 单式图纹理渲染
 
-![demo_textured+(1).glb.gif](images/demo_textured+(1).glb.gif)
+<!-- ![demo_textured+(1).glb.gif](images/demo_textured+(1) Image missing -->.glb.gif)
 
 多视图纹理渲染
 
-![demo_textured_mv+(1).glb.gif](images/demo_textured_mv+(1).glb.gif)
+<!-- ![demo_textured_mv+(1).glb.gif](images/demo_textured_mv+(1) Image missing -->.glb.gif)

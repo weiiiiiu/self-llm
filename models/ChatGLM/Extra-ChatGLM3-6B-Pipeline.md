@@ -1,15 +1,19 @@
 # ChatGLM3-6B Pipeline
-本文档基于ChatGLM的前六节内容做整合，构建pipeline版本，修复过程中的版本不匹配问题，及在05节中的编码问题，目的是快速形成对大模型部署的体感。
+
+本文档基于 ChatGLM 的前六节内容做整合，构建 pipeline 版本，修复过程中的版本不匹配问题，及在 05 节中的编码问题，目的是快速形成对大模型部署的体感。
 
 ## 环境配置
 
-- 模型选择：ChatGLM3-6B，模型大小14G
-- 部署平台：AutoML，环境配置4090单卡24G显寸
+- 模型选择：ChatGLM3-6B，模型大小 14G
+- 部署平台：AutoML，环境配置 4090 单卡 24G 显寸
 - 镜像选择：pytorch 2.1.0+python 3.10+cuda 12.1
 
 ## 部署方式
-为方便管理各个模块的版本，我们采用uv方式进行部署：
-1. 安装uv
+
+为方便管理各个模块的版本，我们采用 uv 方式进行部署：
+
+1. 安装 uv
+
 ```shell
 curl -LsSf https://astral.sh/uv/install.sh | shsource $HOME/.cargo/env
 ```
@@ -21,16 +25,19 @@ mkdir -p /root/autodl-tmp/chatglm && cd /root/autodl-tmp/chatglm
 ```
 
 3. 初始化虚拟环境
+
 ```shell
 uv venv --python 3.10 chatglm-env
 ```
 
 4. 激活虚拟环境
+
 ```shell
 source chatglm-env/bin/activate
 ```
 
-5. 安装requirements.txt
+5. 安装 requirements.txt
+
 ```shell
 # AutoDL开启镜像加速
 source /etc/network_turbo
@@ -41,7 +48,7 @@ uv pip install -r requirements.txt
 
 ## Transformer 基础部署
 
-1. 打开jupyter切换ipykernel，选择我们新创建的环境
+1. 打开 jupyter 切换 ipykernel，选择我们新创建的环境
 
 <div align='center'>
     <img src="./images/extra-images/image-1.png" alt="alt text" width="90%">
@@ -49,7 +56,7 @@ uv pip install -r requirements.txt
 </div>
 
 2. 模型下载
-模型大小为14GB，开镜像加速后下载。
+   模型大小为 14GB，开镜像加速后下载。
 
 ```python
 import torch
@@ -76,6 +83,7 @@ print(f"模型路径: {model_dir}")
 ```
 
 4. 加载分词器和模型
+
 ```python
 # 分词器的加载，本地加载，trust_remote_code=True设置允许从网络上下载模型权重和相关的代码
 print("正在加载分词器...")
@@ -100,9 +108,9 @@ print("模型加载完成！")
     <p>3.jpg</p>
 </div>
 
-
 5. 对话测试
-```pyhton
+
+```python
 # 第一轮对话
 print("=== 第一轮对话 ===")
 response, history = model.chat(tokenizer, "你好", history=[])
@@ -129,12 +137,12 @@ print(f"ChatGLM: {response}")
     <p>4.jpg</p>
 </div>
 
+## FastApi 服务化部署
 
-## FastApi服务化部署
+通过 FastAPI 部署，让本地的 ChatGLM3-6B 模型变成一个服务，可以被任何支持 HTTP 的客户端调用，这样其他系统只需要通过 HTTP 接口，就可以有使用 AI 的能力。
 
-通过FastAPI部署，让本地的ChatGLM3-6B模型变成一个服务，可以被任何支持HTTP的客户端调用，这样其他系统只需要通过HTTP接口，就可以有使用AI的能力。
+在 AutoDL 里，通过终端运行服务：
 
-在AutoDL里，通过终端运行服务：
 ```python
 # api.py
 from fastapi import FastAPI, Request
@@ -164,7 +172,7 @@ async def create_item(request: Request):
     max_length = json_post_list.get('max_length')
     top_p = json_post_list.get('top_p')
     temperature = json_post_list.get('temperature')
-    
+
     # 调用模型进行对话生成
     response, history = model.chat(
         tokenizer,
@@ -174,10 +182,10 @@ async def create_item(request: Request):
         top_p=top_p if top_p else 0.7,
         temperature=temperature if temperature else 0.95
     )
-    
+
     now = datetime.datetime.now()
     time = now.strftime("%Y-%m-%d %H:%M:%S")
-    
+
     # 构建响应JSON
     answer = {
         "response": response,
@@ -185,7 +193,7 @@ async def create_item(request: Request):
         "status": 200,
         "time": time
     }
-    
+
     # 构建日志信息
     log = "[" + time + "] " + '", prompt:"' + prompt + '", response:"' + repr(response) + '"'
     print(log)
@@ -195,24 +203,25 @@ async def create_item(request: Request):
 if __name__ == '__main__':
     # 加载预训练的分词器和模型 - PyTorch 2.0优化版本
     tokenizer = AutoTokenizer.from_pretrained(
-        "/root/autodl-tmp/ZhipuAI/chatglm3-6b", 
+        "/root/autodl-tmp/ZhipuAI/chatglm3-6b",
         trust_remote_code=True
     )
-    
+
     model = AutoModelForCausalLM.from_pretrained(
-        "/root/autodl-tmp/ZhipuAI/chatglm3-6b", 
+        "/root/autodl-tmp/ZhipuAI/chatglm3-6b",
         trust_remote_code=True,
         torch_dtype=torch.float16,  # PyTorch 2.0对float16支持更好
         device_map="auto"  # 利用PyTorch 2.0的自动设备映射
     )
-    
+
     model.eval()  # 设置模型为评估模式
-    
+
     # 启动FastAPI应用
     uvicorn.run(app, host='0.0.0.0', port=6006, workers=1)
 ```
 
-在uv环境下运行上面的代码，并新起一个终端做测试，看回复效果：
+在 uv 环境下运行上面的代码，并新起一个终端做测试，看回复效果：
+
 ```shell
 curl -X POST http://localhost:6006 -H "Content-Type: application/json" -d '{
   "prompt": "你好",
@@ -228,8 +237,6 @@ curl -X POST http://localhost:6006 -H "Content-Type: application/json" -d '{
     <p>5.jpg</p>
 </div>
 
-
-
 服务返回的状态如下：
 
 <div align='center'>
@@ -237,8 +244,10 @@ curl -X POST http://localhost:6006 -H "Content-Type: application/json" -d '{
     <p>6.jpg</p>
 </div>
 
-## 官方chat界面交互
+## 官方 chat 界面交互
+
 在学习了基础的 Transformer 模型调用和 FastAPI 服务部署之后，我们可以进一步体验官方提供的交互式 Chat 界面。在 ChatGLM3 的官方示例 中，提供了两种主流的轻量级 Web 交互方案：
+
 - web_demo_gradio.py（基于 Gradio）
 - web_demo_streamlit.py（基于 Streamlit）
 
@@ -246,24 +255,25 @@ curl -X POST http://localhost:6006 -H "Content-Type: application/json" -d '{
 
 由于需要在 AutoDL 平台上从外部访问服务，我们可通过端口 6006 进行服务映射，实现 Web 界面的远程访问。
 
-1. clone该项目，修改模型路径到本地
+1. clone 该项目，修改模型路径到本地
 
 ```shell
 git clone https://github.com/THUDM/ChatGLM3.git
 
 cd ChatGLM3/basic_demo
 
-vim web_demo_streamlit.py 
+vim web_demo_streamlit.py
 ```
-修改MODEL_PATH和TOKENIZER_PATH为：'/root/autodl-tmp/ZhipuAI/chatglm3-6b'
+
+修改 MODEL_PATH 和 TOKENIZER_PATH 为：'/root/autodl-tmp/ZhipuAI/chatglm3-6b'
 
 <div align='center'>
     <img src="./images/extra-images/image-7.png" alt="alt text" width="90%">
     <p>7.jpg</p>
 </div>
 
+运行启动该 streamlit 应用：
 
-运行启动该streamlit应用：
 ```shell
 streamlit run web_demo_streamlit.py --server.address 127.0.0.1 --server.port 6006
 ```
@@ -273,31 +283,30 @@ streamlit run web_demo_streamlit.py --server.address 127.0.0.1 --server.port 600
     <p>8.jpg</p>
 </div>
 
-
-在AutoDL中，需要通过实例的自定义服务，把接口映射到本地，具体操作参考如下步骤：
+在 AutoDL 中，需要通过实例的自定义服务，把接口映射到本地，具体操作参考如下步骤：
 
 <div align='center'>
     <img src="./images/extra-images/image-9.png" alt="alt text" width="90%">
     <p>9.jpg</p>
 </div>
 
-
-在本地通过http://localhost:6006访问demo，效果如下：
+在本地通过 http://localhost:6006 访问 demo，效果如下：
 
 <div align='center'>
     <img src="./images/extra-images/image-10.png" alt="alt text" width="90%">
     <p>10.jpg</p>
 </div>
 
-## 接入LangChain搭建知识库，部署RAG应用
-无论是FastAPI部署还是刚才的Streamlit web交互，ChatGLM3-6B都只能基于它的 预训练知识 来回答问题。但如果我想让它回答关于我们公司内部文档、最新技术资料或者特定领域知识的问题呢？
+## 接入 LangChain 搭建知识库，部署 RAG 应用
 
-这就需要用到**RAG（Retrieval-Augmented Generation）**，简单来说，就是"检索增强生成"——先从知识库中检索相关信息，再让大模型基于这些信息生成回答。接下来，本小节将构建一个完整的知识库助手，基于Sentence Transformer和Chroma向量数据库构建语料库，并将ChatGLM3-6B接入LangChain框架实现完整的RAG流程。
+无论是 FastAPI 部署还是刚才的 Streamlit web 交互，ChatGLM3-6B 都只能基于它的 预训练知识 来回答问题。但如果我想让它回答关于我们公司内部文档、最新技术资料或者特定领域知识的问题呢？
 
+这就需要用到**RAG（Retrieval-Augmented Generation）**，简单来说，就是"检索增强生成"——先从知识库中检索相关信息，再让大模型基于这些信息生成回答。接下来，本小节将构建一个完整的知识库助手，基于 Sentence Transformer 和 Chroma 向量数据库构建语料库，并将 ChatGLM3-6B 接入 LangChain 框架实现完整的 RAG 流程。
 
 1. 下载语料库内容
 
 到数据存储目录中，下载知识库源码：
+
 ```shell
 cd /root/autodl-tmp
 # 下载所有知识库源码
@@ -314,6 +323,7 @@ git clone https://github.com/datawhalechina/hugging-llm.git
 </div>
 
 2. 环境验证测试
+
 ```python
 # 完整的ChatGLM3-6B LangChain集成测试
 import sys
@@ -327,17 +337,17 @@ try:
     from langchain.vectorstores import Chroma
     from langchain.chains import RetrievalQA
     from langchain.text_splitter import RecursiveCharacterTextSplitter
-    
+
     print("✅ 所有核心组件导入成功！")
-    
+
     # 测试实际功能
     embeddings = HuggingFaceEmbeddings(
         model_name="/root/autodl-tmp/sentence-transformer"
     )
     print("✅ 向量化模型加载成功！")
-    
+
     print("🎉 ChatGLM3-6B LangChain环境配置完成！")
-    
+
 except Exception as e:
     print(f"❌ 错误详情: {e}")
     import traceback
@@ -349,7 +359,8 @@ except Exception as e:
     <p>12.jpg</p>
 </div>
 
-3. 下载Sentence-Transformer模型，用于向量化数据库
+3. 下载 Sentence-Transformer 模型，用于向量化数据库
+
 ```python
 # 创建向量模型目录
 mkdir -p /root/autodl-tmp/sentence-transformer
@@ -393,7 +404,7 @@ def detect_encoding(file_path):
 # 安全读取文件内容
 def safe_read_file(file_path):
     encodings = ['utf-8', 'gbk', 'gb2312', 'latin-1', 'cp1252']
-    
+
     for encoding in encodings:
         try:
             with open(file_path, 'r', encoding=encoding) as f:
@@ -404,7 +415,7 @@ def safe_read_file(file_path):
         except Exception as e:
             print(f"读取文件 {file_path} 时出错: {e}")
             continue
-    
+
     # 如果所有编码都失败，尝试自动检测
     try:
         detected_encoding = detect_encoding(file_path)
@@ -414,7 +425,7 @@ def safe_read_file(file_path):
                 return content, detected_encoding
     except:
         pass
-    
+
     return None, None
 
 # 改进的文件加载函数
@@ -422,14 +433,14 @@ def get_text_robust(dir_path):
     file_lst = get_files(dir_path)
     docs = []
     failed_files = []
-    
+
     print(f"\n开始处理文件夹: {dir_path}")
     print(f"找到 {len(file_lst)} 个文件")
-    
+
     for one_file in tqdm(file_lst, desc=f"处理 {os.path.basename(dir_path)}"):
         try:
             file_type = one_file.split('.')[-1]
-            
+
             # 首先尝试使用原始加载器
             try:
                 if file_type == 'md':
@@ -439,26 +450,26 @@ def get_text_robust(dir_path):
                 else:
                     continue
                 docs.extend(loader.load())
-                
+
             except UnicodeDecodeError:
                 # 如果编码错误，使用安全读取方法
                 print(f"\n编码错误，尝试安全读取: {one_file}")
                 content, encoding = safe_read_file(one_file)
                 if content:
                     docs.append(Document(
-                        page_content=content, 
+                        page_content=content,
                         metadata={"source": one_file, "encoding": encoding}
                     ))
                     print(f"成功读取，使用编码: {encoding}")
                 else:
                     failed_files.append(one_file)
                     print(f"跳过文件: {one_file}")
-                    
+
         except Exception as e:
             failed_files.append(one_file)
             print(f"\n处理文件失败: {one_file}, 错误: {e}")
             continue
-    
+
     print(f"\n文件夹 {dir_path} 处理完成:")
     print(f"- 成功处理: {len(file_lst) - len(failed_files)} 个文件")
     print(f"- 失败文件: {len(failed_files)} 个")
@@ -468,7 +479,7 @@ def get_text_robust(dir_path):
             print(f"  - {f}")
         if len(failed_files) > 5:
             print(f"  - ... 还有 {len(failed_files) - 5} 个文件")
-    
+
     return docs
 
 # 目标文件夹
@@ -528,22 +539,20 @@ print(f"向量化的文本块数量: {len(split_docs)}")
     <p>13.jpg</p>
 </div>
 
+最终共加载了 450 个文档、25768 个文本块，平均每个文档被分割成约 57 个文本块，设置的`chunk_size=500, chunk_overlap=150`,这个配置适合文本快的检索，不至于过大或过小。
 
-最终共加载了450个文档、25768个文本块，平均每个文档被分割成约57个文本块，设置的`chunk_size=500, chunk_overlap=150`,这个配置适合文本快的检索，不至于过大或过小。
-
-`Failed to send telemetry event`只是ChromaDB尝试发送使用统计信息时的版本兼容问题告警，重要的是向量数据库本身工作正常。
+`Failed to send telemetry event`只是 ChromaDB 尝试发送使用统计信息时的版本兼容问题告警，重要的是向量数据库本身工作正常。
 
 <div align='center'>
     <img src="./images/extra-images/image-14.png" alt="alt text" width="90%">
     <p>14.jpg</p>
 </div>
 
+5. ChatGLM 接入 LangChain
 
-5. ChatGLM接入LangChain
+LangChain 是一个框架，它要求所有 LLM 必须遵循统一的接口规范，使大模型（本例为 ChatGLM）能够作为标准组件，参与提示工程、记忆管理、检索增强、智能代理等高级流程。
 
-LangChain是一个框架，它要求所有 LLM 必须遵循统一的接口规范，使大模型（本例为ChatGLM）能够作为标准组件，参与提示工程、记忆管理、检索增强、智能代理等高级流程。
-
-我们先通过统一的LLM类，实现ChatGLM的LangChain封装：
+我们先通过统一的 LLM 类，实现 ChatGLM 的 LangChain 封装：
 
 ```python
 # LLM.py
@@ -574,13 +583,13 @@ class ChatGLM_LLM(LLM):
         # 重写调用函数
         response, history = self.model.chat(self.tokenizer, prompt , history=[])
         return response
-        
+
     @property
     def _llm_type(self) -> str:
         return "ChatGLM3-6B"
 ```
 
-验证ChatGLM是否做了向量知识库的增强，和LLM.py放在同目录下：
+验证 ChatGLM 是否做了向量知识库的增强，和 LLM.py 放在同目录下：
 
 ```python
 # test_qa_chain.py
@@ -594,7 +603,7 @@ import os
 def load_chain():
     """加载检索问答链"""
     print("正在加载向量数据库...")
-    
+
     # 定义 Embeddings
     embeddings = HuggingFaceEmbeddings(model_name="/root/autodl-tmp/sentence-transformer")
 
@@ -606,7 +615,7 @@ def load_chain():
         persist_directory=persist_directory,
         embedding_function=embeddings
     )
-    
+
     print("正在加载ChatGLM模型...")
     # 加载自定义 LLM
     llm = ChatGLM_LLM(model_path="/root/autodl-tmp/ZhipuAI/chatglm3-6b")
@@ -626,31 +635,31 @@ def load_chain():
         return_source_documents=True,
         chain_type_kwargs={"prompt":QA_CHAIN_PROMPT}
     )
-    
+
     return qa_chain
 
 def test_qa_chain():
     """测试检索问答链效果"""
     # 加载问答链
     qa_chain = load_chain()
-    
+
     # 测试问题
     questions = [
         "什么是 Self LLM？",
         "ChatGLM3-6B 有什么特点？",
         "如何部署 ChatGLM 模型？"
     ]
-    
+
     print("\n=== 开始测试检索问答链 ===")
-    
+
     for i, question in enumerate(questions, 1):
         print(f"\n--- 测试问题 {i} ---")
         print(f"问题：{question}")
-        
+
         # 检索问答链回答
         result = qa_chain({"query": question})
         print(f"检索问答链回答：{result['result']}")
-        
+
         # 显示检索到的相关文档数量
         print(f"检索到相关文档数量：{len(result['source_documents'])}")
         print("-" * 50)
@@ -664,22 +673,22 @@ if __name__ == "__main__":
     <p>15.jpg</p>
 </div>
 
+## Lora 微调部署
 
-## Lora微调部署
+微调技术是个很重要的技能，举个例子，腾讯动漫中有一个漫画角色 AI 助手，让用户可以直接与漫画角色做对话。如果我们使用原版 ChatGLM3-6B 模型来做，模型依然只记住自己是 ChatGLM3-6B，而不是自己是某个角色的设定。
 
-微调技术是个很重要的技能，举个例子，腾讯动漫中有一个漫画角色AI助手，让用户可以直接与漫画角色做对话。如果我们使用原版ChatGLM3-6B模型来做，模型依然只记住自己是ChatGLM3-6B，而不是自己是某个角色的设定。
-
-我们需要只训练一小部分新增的参数，更新该模型的设定，可以用Lora（Low-Rank Adaptation）来构建个性化风格的LLM。
-
+我们需要只训练一小部分新增的参数，更新该模型的设定，可以用 Lora（Low-Rank Adaptation）来构建个性化风格的 LLM。
 
 1. 下载训练数据集
 
-格式为：instruction-input-output三元结构（参考Self-Instruct论文）
+格式为：instruction-input-output 三元结构（参考 Self-Instruct 论文）
+
 ```shell
 wget https://raw.githubusercontent.com/datawhalechina/self-llm/master/dataset/huanhuan.json
 ```
 
-2. 训练LoRA权重
+2. 训练 LoRA 权重
+
 ```python
 # lora_finetune.py
 import torch
@@ -694,14 +703,14 @@ import os
 def process_func(example):
     MAX_LENGTH = 512
     input_ids, labels = [], []
-    
+
     instruction_text = "\n".join([
         "<|system|>",
         "现在你要扮演皇帝身边的女人--甄嬛",
         "<|user|>",
         example["instruction"] + example["input"] + "<|assistant|>"
     ]).strip() + "\n"
-    
+
     instruction = tokenizer(
         instruction_text,
         add_special_tokens=True,
@@ -709,7 +718,7 @@ def process_func(example):
         max_length=MAX_LENGTH,
         return_tensors=None
     )["input_ids"]
-    
+
     response = tokenizer(
         example["output"],
         add_special_tokens=False,
@@ -717,10 +726,10 @@ def process_func(example):
         max_length=MAX_LENGTH,
         return_tensors=None
     )["input_ids"]
-    
+
     input_ids = instruction + response + [tokenizer.eos_token_id]
     labels = [tokenizer.pad_token_id] * len(instruction) + response + [tokenizer.eos_token_id]
-    
+
     # 确保长度一致
     if len(input_ids) > MAX_LENGTH:
         input_ids = input_ids[:MAX_LENGTH]
@@ -729,7 +738,7 @@ def process_func(example):
         pad_len = MAX_LENGTH - len(input_ids)
         input_ids += [tokenizer.pad_token_id] * pad_len
         labels += [tokenizer.pad_token_id] * pad_len
-    
+
     labels = [(l if l != tokenizer.pad_token_id else -100) for l in labels]
 
     return {
@@ -753,24 +762,24 @@ args = TrainingArguments(
 
 if __name__ == "__main__":
     print("🚀 开始ChatGLM3-6B Lora微调...")
-    
+
     # 1. 加载数据集
     print("📊 加载数据集...")
     df = pd.read_json('./huanhuan.json')
     ds = Dataset.from_pandas(df)
     print(f"数据集大小: {len(ds)}")
-    
+
     # 2. 加载tokenizer
     print("🔤 加载tokenizer...")
     tokenizer = AutoTokenizer.from_pretrained(
         "/root/autodl-tmp/ZhipuAI/chatglm3-6b",
         trust_remote_code=True
     )
-    
+
     # 3. 数据预处理
     print("⚙️ 数据预处理...")
     tokenized_ds = ds.map(process_func, remove_columns=ds.column_names)
-    
+
     # 4. 加载模型
     print("🤖 加载ChatGLM3-6B模型...")
     model = AutoModelForCausalLM.from_pretrained(
@@ -779,31 +788,31 @@ if __name__ == "__main__":
         trust_remote_code=True,
         low_cpu_mem_usage=True
     )
-    
+
     # 5. 创建LoRA参数
     print("🔧 配置LoRA参数...")
     config = LoraConfig(
-        task_type=TaskType.CAUSAL_LM, 
+        task_type=TaskType.CAUSAL_LM,
         target_modules=["query_key_value", "dense", "dense_h_to_4h", "dense_4h_to_h"],  # 更多模块
         r=16,
         lora_alpha=32,
         lora_dropout=0.1
     )
-    
+
     # 6. 模型合并
     print("🔗 应用LoRA适配器...")
     model = get_peft_model(model, config)
-    
+
     # 确保LoRA参数可训练
     model.train()
     for name, param in model.named_parameters():
         if 'lora' in name.lower():
             param.requires_grad = True
             print(f"✅ 激活LoRA参数: {name}")
-    
+
     # 打印可训练参数统计
     model.print_trainable_parameters()
-    
+
     # 7. 配置数据整理器
     data_collator = DataCollatorForSeq2Seq(
         tokenizer,
@@ -813,7 +822,7 @@ if __name__ == "__main__":
         padding=True,
         return_tensors="pt"
     )
-    
+
     # 8. 创建训练器
     print("🏃 创建训练器...")
     trainer = Trainer(
@@ -822,28 +831,28 @@ if __name__ == "__main__":
         train_dataset=tokenized_ds,
         data_collator=data_collator,
     )
-    
+
     # 9. 开始训练
     print("🎯 开始训练...")
     trainer.train()
-    
+
     # 10. 保存模型 - 🔥 增强版保存逻辑
     print("💾 保存LoRA权重...")
-    
+
     # 确保目录存在
     save_path = "/root/output/ChatGLM-Lora"
     os.makedirs(save_path, exist_ok=True)
-    
+
     # 保存LoRA权重
     trainer.save_model(save_path)
-    
+
     # 直接使用model.save_pretrained确保保存成功
     model.save_pretrained(save_path)
-    
+
     # 验证保存是否成功
     required_files = ["adapter_config.json", "adapter_model.bin"]
     all_files_exist = all(os.path.exists(os.path.join(save_path, f)) for f in required_files)
-    
+
     if all_files_exist:
         print(f"✅ LoRA权重已成功保存到: {save_path}")
         print(f"📁 保存的文件:")
@@ -856,7 +865,7 @@ if __name__ == "__main__":
         for f in required_files:
             if not os.path.exists(os.path.join(save_path, f)):
                 print(f"   ❌ 缺少: {f}")
-    
+
     print("✅ 微调完成！")
 ```
 
@@ -865,7 +874,7 @@ if __name__ == "__main__":
     <p>16.jpg</p>
 </div>
 
-3. 加载Lora权重测试效果：
+3. 加载 Lora 权重测试效果：
 
 ```python
 # lora_models.py
@@ -874,13 +883,13 @@ from peft import PeftModel
 import torch
 
 # 加载基础模型和tokenizer
-model = AutoModelForCausalLM.from_pretrained("/root/autodl-tmp/ZhipuAI/chatglm3-6b", 
-                                           trust_remote_code=True, 
+model = AutoModelForCausalLM.from_pretrained("/root/autodl-tmp/ZhipuAI/chatglm3-6b",
+                                           trust_remote_code=True,
                                            low_cpu_mem_usage=True,
                                            torch_dtype=torch.half,
                                            device_map="auto")
-tokenizer = AutoTokenizer.from_pretrained("/root/autodl-tmp/ZhipuAI/chatglm3-6b", 
-                                         use_fast=False, 
+tokenizer = AutoTokenizer.from_pretrained("/root/autodl-tmp/ZhipuAI/chatglm3-6b",
+                                         use_fast=False,
                                          trust_remote_code=True)
 
 # 加载LoRA权重
@@ -890,9 +899,9 @@ p_model = PeftModel.from_pretrained(model, model_id="/root/output/ChatGLM-Lora")
 def test_model(question):
     # 按照训练时的格式构造输入
     prompt = "<|system|>\n现在你要扮演皇帝身边的女人--甄嬛\n<|user|>\n{}\n<|assistant|>\n".format(question)
-    
+
     inputs = tokenizer(prompt, return_tensors="pt").to(p_model.device)
-    
+
     with torch.no_grad():
         outputs = p_model.generate(
             **inputs,
@@ -902,7 +911,7 @@ def test_model(question):
             top_p=0.9,
             pad_token_id=tokenizer.eos_token_id
         )
-    
+
     response = tokenizer.decode(outputs[0], skip_special_tokens=True)
     return response
 
@@ -926,30 +935,31 @@ for question in test_questions:
     <p>17.jpg</p>
 </div>
 
+注：受限于数据盘大小，Prompt 也会对效果起到影响，更好的效果可以在自行训练中加深训练轮次。
 
-注：受限于数据盘大小，Prompt也会对效果起到影响，更好的效果可以在自行训练中加深训练轮次。
+## Code Interpreter 部署使用
 
-## Code Interpreter部署使用
+想象一下，如果 ChatGLM 不仅能帮你写代码，还能直接运行这些代码并给你结果，这会带来什么样的体验？
 
-想象一下，如果ChatGLM不仅能帮你写代码，还能直接运行这些代码并给你结果，这会带来什么样的体验？
+当你使用 ChatGLM 普通模式，问"帮我计算 1 到 100 的和"，模型会返回代码`sum(range(1,101))`, 而当你使用 Code Interpreter 模式，问同样问题，模型不仅返回代码，还执行代码，最终直接告诉你结果是：5050。
 
-当你使用ChatGLM普通模式，问"帮我计算1到100的和"，模型会返回代码`sum(range(1,101))`, 而当你使用Code Interpreter模式，问同样问题，模型不仅返回代码，还执行代码，最终直接告诉你结果是：5050。
+那么通过 Interpreter，就可以完成程序的自动调试和修正，而非一次次的输入交互做重试。
 
-那么通过Interpreter，就可以完成程序的自动调试和修正，而非一次次的输入交互做重试。
-
-下面我们通过官方的demo做使用，在前面的步骤中已经clone了ChatGLM3仓库代码，所以这里我们之间进入：
+下面我们通过官方的 demo 做使用，在前面的步骤中已经 clone 了 ChatGLM3 仓库代码，所以这里我们之间进入：
 
 ```shell
 cd /root/autodl-tmp/ChatGLM3/composite_demo
 ```
 
 设置环境变量：
+
 ```shell
 export MODEL_PATH=/root/autodl-tmp/ZhipuAI/chatglm3-6b
 export IPYKERNEL=python3
 ```
 
-依旧使用streamlit启动6006的服务：
+依旧使用 streamlit 启动 6006 的服务：
+
 ```shell
 streamlit run main.py --server.port 6006
 ```
@@ -966,7 +976,7 @@ streamlit run main.py --server.port 6006
     <p>19.jpg</p>
 </div>
 
-切换为Code Interpreter模式做提问，可以运行代码生成结果：
+切换为 Code Interpreter 模式做提问，可以运行代码生成结果：
 
 <div align='center'>
     <img src="./images/extra-images/image-20.png" alt="alt text" width="90%">

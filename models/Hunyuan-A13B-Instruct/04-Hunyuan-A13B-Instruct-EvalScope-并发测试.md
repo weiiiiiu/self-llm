@@ -127,21 +127,21 @@ run_task(task_cfg=task_cfg)
 
 等待 3 分钟左右评测就完成啦，控制台输出的结果如下图所示：
 
-![](./images/04-01.png)
+<!-- ![](./images/04-01.png) Image missing -->
 
 实验结果可能有误差，因为在评测任务配置中我们把 temperature 调到了 1.0，如果调小一些，可能会得到更精确的结果。
 可以看到模型的得分还是不错的，模型评测的文件保存在`/root/autodl-tmp/outputs/Qwen3-8B/20250502_002809/reviews/Qwen3-8B`目录下。
 
-![](./images/04-02.png)
+<!-- ![](./images/04-02.png) Image missing -->
 
 ## EvalScope 简介：
 
 - EvalScope 支持多种模型评测 backend，包括 OpenAI API、OpenCompass、VLMEvalKit、RAGEval 等。
 
-![](./images/04-03.png)
+<!-- ![](./images/04-03.png) Image missing -->
 
 - EvalScope 也支持自定义评测任务和数据集，支持多种评测指标。
 
-![](./images/04-04.png)
+<!-- ![](./images/04-04.png) Image missing -->
 
 模型评测对于验证和优化大模型至关重要。通过评测，我们可以全面了解模型的性能、能力边界及潜在问题，确保其在实际应用中的表现符合预期，并推动持续改进。此外，评测还能检测模型的公平性和安全性，提升用户体验，并为不同模型间的对比分析提供客观依据。最终，评测结果为后续版本迭代提供了关键数据支持，保障模型在实际场景中的可靠性和有效性。

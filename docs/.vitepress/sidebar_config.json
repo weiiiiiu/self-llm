@@ -1,0 +1,1216 @@
+{
+  "models_sidebar": [
+    {
+      "text": "Qwen 系列",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Qwen",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Qwen-7B-hat Transformers 部署调用",
+              "link": "/models/Qwen/01-Qwen-7B-Chat-Transformers部署调用"
+            },
+            {
+              "text": "Qwen-7B-Chat FastApi 部署调用",
+              "link": "/models/Qwen/02-Qwen-7B-Chat-FastApi-部署调用"
+            },
+            {
+              "text": "Qwen-7B-Chat WebDemo",
+              "link": "/models/Qwen/03-Qwen-7B-Chat-WebDemo"
+            },
+            {
+              "text": "04-Qwen-7B-Chat Lora 微调",
+              "link": "/models/Qwen/04-Qwen-7B-Chat-Lora-微调"
+            },
+            {
+              "text": "05-Qwen-7B-Chat Ptuning 微调",
+              "link": "/models/Qwen/05-Qwen-7B-Chat-Ptuning-微调"
+            },
+            {
+              "text": "Qwen-7B-chat 全量微调",
+              "link": "/models/Qwen/06-Qwen-7B-chat-全量微调"
+            },
+            {
+              "text": "Qwen-7B-Chat 接入langchain搭建知识库助手",
+              "link": "/models/Qwen/07-Qwen-7B-Chat-接入langchain搭建知识库助手"
+            },
+            {
+              "text": "08-Qwen-7B-Chat Lora 低精度微调",
+              "link": "/models/Qwen/08-Qwen-7B-Chat-Lora-低精度微调"
+            },
+            {
+              "text": "09-Qwen-1_8B-chat CPU 部署",
+              "link": "/models/Qwen/09-Qwen-1_8B-chat-CPU部署"
+            }
+          ]
+        },
+        {
+          "text": "Qwen1.5",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Qwen1.5-7B-Chat FastApi 部署调用",
+              "link": "/models/Qwen1.5/01-Qwen1.5-7B-Chat-FastApi-部署调用"
+            },
+            {
+              "text": "Qwen1.5-7B-Chat 接入 LangChain 搭建知识库助手",
+              "link": "/models/Qwen1.5/02-Qwen1.5-7B-Chat-接入langchain搭建知识库助手"
+            },
+            {
+              "text": "Qwen1.5-7B-Chat WebDemo 部署",
+              "link": "/models/Qwen1.5/03-Qwen1.5-7B-Chat-WebDemo"
+            },
+            {
+              "text": "Qwen1.5-7B-Chat Lora 微调",
+              "link": "/models/Qwen1.5/04-Qwen1.5-7B-chat-Lora-微调"
+            },
+            {
+              "text": "Qwen1.5-7B-Chat-GPTQ-Int4 部署环境",
+              "link": "/models/Qwen1.5/05-Qwen1.5-7B-Chat-GPTQ-Int4--WebDemo"
+            },
+            {
+              "text": "Qwen1.5-MoE-Chat Transformers 部署调用",
+              "link": "/models/Qwen1.5/06-Qwen1.5-MoE-A2.7B"
+            },
+            {
+              "text": "Qwen1.5-7B-Chat vLLM 部署调用",
+              "link": "/models/Qwen1.5/07-Qwen1.5-7B-Chat-vLLM-推理部署调用"
+            },
+            {
+              "text": "Qwen1.5-7B-chat Lora 微调 接入SwanLab实验管理平台",
+              "link": "/models/Qwen1.5/08-Qwen1.5-7B-chat-LoRA微调接入实验管理"
+            }
+          ]
+        },
+        {
+          "text": "Qwen2",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Qwen2-7B-Instruct FastApi 部署调用",
+              "link": "/models/Qwen2/01-Qwen2-7B-Instruct-FastApi-部署调用"
+            },
+            {
+              "text": "Qwen2-7B-Instruct 接入 LangChain 搭建知识库助手",
+              "link": "/models/Qwen2/02-Qwen2-7B-Instruct-Langchain-接入"
+            },
+            {
+              "text": "Qwen2-7B-Instruct WebDemo部署",
+              "link": "/models/Qwen2/03-Qwen2-7B-Instruct-WebDemo部署"
+            },
+            {
+              "text": "04-Qwen2-7B-Instruct vLLM 部署调用",
+              "link": "/models/Qwen2/04-Qwen2-7B-Instruct-vLLM-部署调用"
+            },
+            {
+              "text": "Qwen2-7B-Instruct Lora 微调",
+              "link": "/models/Qwen2/05-Qwen2-7B-Instruct-Lora-微调"
+            }
+          ]
+        },
+        {
+          "text": "Qwen2.5",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Qwen2.5-7B-Instruct FastApi 部署调用",
+              "link": "/models/Qwen2.5/01-Qwen2.5-7B-Instruct-FastApi-部署调用"
+            },
+            {
+              "text": "Qwen2.5-7B-Instruct Langchain 接入",
+              "link": "/models/Qwen2.5/02-Qwen2.5-7B-Instruct-Langchain-接入"
+            },
+            {
+              "text": "03-Qwen2.5-7B-Instruct vLLM 部署调用",
+              "link": "/models/Qwen2.5/03-Qwen2.5-7B-Instruct-vLLM-部署调用"
+            },
+            {
+              "text": "Qwen2_5-7B-Instruct WebDemo 部署",
+              "link": "/models/Qwen2.5/04-Qwen2_5-7B-Instruct-WebDemo部署"
+            },
+            {
+              "text": "Qwen2.5-7B-Instruct Lora 微调",
+              "link": "/models/Qwen2.5/05-Qwen2.5-7B-Instruct-Lora-微调"
+            },
+            {
+              "text": "06-Qwen2.5-7B-Instruct o1-like 推理链实现",
+              "link": "/models/Qwen2.5/06-Qwen2.5-7B-Instruct-o1-like-推理链实现"
+            },
+            {
+              "text": "Qwen2.5-7B-Instruct Lora 微调 SwanLab可视化记录版",
+              "link": "/models/Qwen2.5/07-Qwen2.5-7B-Instruct-Lora-微调-SwanLab可视化记录版"
+            },
+            {
+              "text": "Qwen2.5",
+              "link": "/models/Qwen2.5/readme"
+            }
+          ]
+        },
+        {
+          "text": "Qwen2.5-Coder",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Qwen2.5-7B-Instruct FastApi 部署调用",
+              "link": "/models/Qwen2.5-Coder/01-Qwen2.5-Coder-7B-Instruct-FastApi-部署调用"
+            },
+            {
+              "text": "Qwen2.5-7B-Instruct Langchain 接入",
+              "link": "/models/Qwen2.5-Coder/02-Qwen2.5-7B-Instruct-Langchain-接入"
+            },
+            {
+              "text": "Qwen2_5-7B-Instruct WebDemo 部署",
+              "link": "/models/Qwen2.5-Coder/03-Qwen2.5-Coder-7B-Instruct-WebDemo部署"
+            },
+            {
+              "text": "03-Qwen2.5-7B-Instruct vLLM 部署调用",
+              "link": "/models/Qwen2.5-Coder/04-Qwen2.5-Coder-7B-Instruct-vLLM-部署调用"
+            },
+            {
+              "text": "Qwen2.5-Coder-7B-Instruct Lora 微调  SwanLab 可视化记录版",
+              "link": "/models/Qwen2.5-Coder/05-Qwen2.5-Coder-7B-Instruct-Lora-微调-SwanLab-可视化记录版"
+            },
+            {
+              "text": "Qwen2.5-Coder-7B-Instruct Lora 微调",
+              "link": "/models/Qwen2.5-Coder/Qwen2.5-Coder-7B-Instruct-Lora-微调"
+            }
+          ]
+        },
+        {
+          "text": "Qwen3",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Qwen3 模型结构解析 Blog",
+              "link": "/models/Qwen3/01-Qwen3-模型结构解析-Blog"
+            },
+            {
+              "text": "02-Qwen3-8B vLLM 部署调用",
+              "link": "/models/Qwen3/02-Qwen3-8B-vLLM-部署调用"
+            },
+            {
+              "text": "Qwen3-7B-Instruct Windows LMStudio 部署",
+              "link": "/models/Qwen3/03-Qwen3-7B-Instruct-Windows-LMStudio-部署"
+            },
+            {
+              "text": "04-Qwen3-8B EvalScope 智商情商评测",
+              "link": "/models/Qwen3/04-Qwen3-8B-EvalScope智商情商评测"
+            },
+            {
+              "text": "Qwen3-8B-LoRA 及 SwanLab 可视化记录",
+              "link": "/models/Qwen3/05-Qwen3-8B-LoRA及SwanLab可视化记录"
+            },
+            {
+              "text": "06-Qwen3-30B-A3B 微调及 SwanLab 可视化记录",
+              "link": "/models/Qwen3/06-Qwen3-30B-A3B-微调及-SwanLab-可视化记录"
+            },
+            {
+              "text": "Qwen3 Think 解密",
+              "link": "/models/Qwen3/07-Qwen3-Think-解密-Blog"
+            },
+            {
+              "text": "大模型都这么厉害了，还需要微调吗？0.6B的小模型还有什么意义吗？",
+              "link": "/models/Qwen3/08-Qwen3_0_6B的小模型有什么用"
+            },
+            {
+              "text": "09-Qwen3-1.7B-医学推理式对话微调 及 SwanLab 可视化记录",
+              "link": "/models/Qwen3/09-Qwen3-1.7B-医学推理式对话微调-及-SwanLab-可视化记录"
+            },
+            {
+              "text": "Qwen3-8B GRPO微调及通过swanlab可视化",
+              "link": "/models/Qwen3/10-Qwen3-8B-GRPO微调及通过swanlab可视化"
+            }
+          ]
+        },
+        {
+          "text": "Qwen2-VL",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Qwen2-VL-2B-Instruct FastApi 部署调用",
+              "link": "/models/Qwen2-VL/01-Qwen2-VL-2B-Instruct-FastApi-部署调用"
+            },
+            {
+              "text": "Qwen2-VL-2B-Instruct WebDemo 部署",
+              "link": "/models/Qwen2-VL/02-Qwen2-VL-2B-Instruct-Web-Demo部署"
+            },
+            {
+              "text": "03-Qwen2-vl-2B vLLM 部署调用",
+              "link": "/models/Qwen2-VL/03-Qwen2-VL-2B-Instruct-vLLM部署调用"
+            },
+            {
+              "text": "Qwen2-VL-2B-Instruct Lora 微调",
+              "link": "/models/Qwen2-VL/04-Qwen2-VL-2B-Lora-微调"
+            },
+            {
+              "text": "Qwen2-VL-2B-Instruct Lora 微调 SwanLab可视化记录版",
+              "link": "/models/Qwen2-VL/05-Qwen2-VL-2B-Instruct-Lora-微调-SwanLab-可视化记录版"
+            },
+            {
+              "text": "Qwen2-VL-2B-Instruct Lora 微调案例 - LaTexOCR",
+              "link": "/models/Qwen2-VL/06-Qwen2-VL-2B-Instruct-Lora-微调案例---LaTexOCR"
+            }
+          ]
+        },
+        {
+          "text": "Qwen3-VL",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Qwen3-VL 模型结构解析（DeepStack解析）",
+              "link": "/models/Qwen3-VL/01-Qwen3-VL-MoE-模型结构解析-Blog"
+            },
+            {
+              "text": "Qwen3-VL-4B-Instruct FastApi 部署调用",
+              "link": "/models/Qwen3-VL/02-Qwen3-VL-4B-Instruct-FastApi-部署调用"
+            },
+            {
+              "text": "04-Qwen3-VL-4B-Instruct-vLLM",
+              "link": "/models/Qwen3-VL/04-Qwen3-VL-4B-Instruct-vLLM"
+            },
+            {
+              "text": "Qwen/Qwen3-VL-4B-Instruct  Lora 可视化微调案例 - LaTexOCR",
+              "link": "/models/Qwen3-VL/05-Qwen3-VL-4B-Instruct--Lora-可视化微调案例---LaTexOCR"
+            },
+            {
+              "text": "Qwen/Qwen3-VL-4B-Instruct  Lora 可视化微调案例 - LaTexOCR",
+              "link": "/models/Qwen3-VL/Qwen3-VL-4B-Instruct--Lora-可视化微调案例---LaTexOCR"
+            }
+          ]
+        },
+        {
+          "text": "Qwen-Audio",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Qwen-Audio-chat FastApi 部署调用",
+              "link": "/models/Qwen-Audio/01-Qwen-Audio-chat-FastApi"
+            },
+            {
+              "text": "Qwen-Audio-chat WebDemo 部署",
+              "link": "/models/Qwen-Audio/02-Qwen-Audio-chat-WebDemo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "GLM 系列",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "ChatGLM",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "ChatGLM3-6B Transformers部署调用",
+              "link": "/models/ChatGLM/01-ChatGLM3-6B-Transformer部署调用"
+            },
+            {
+              "text": "ChatGLM3-6B FastApi 部署调用",
+              "link": "/models/ChatGLM/02-ChatGLM3-6B FastApi部署调用"
+            },
+            {
+              "text": "ChatGLM3-6B-chat",
+              "link": "/models/ChatGLM/03-ChatGLM3-6B-chat"
+            },
+            {
+              "text": "ChatGLM3-6B Code Interpreter",
+              "link": "/models/ChatGLM/04-ChatGLM3-6B-Code-Interpreter"
+            },
+            {
+              "text": "基于 ChatGLM3 和 LangChain 搭建知识库助手",
+              "link": "/models/ChatGLM/05-ChatGLM3-6B接入LangChain搭建知识库助手"
+            },
+            {
+              "text": "06-ChatGLM3-6B-chat Lora 微调",
+              "link": "/models/ChatGLM/06-ChatGLM3-6B-Lora微调"
+            },
+            {
+              "text": "ChatGLM3-6B Pipeline",
+              "link": "/models/ChatGLM/Extra-ChatGLM3-6B-Pipeline"
+            }
+          ]
+        },
+        {
+          "text": "CharacterGLM",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "CharacterGLM-6B Transformers部署调用",
+              "link": "/models/CharacterGLM/01-CharacterGLM-6B-Transformer部署调用"
+            },
+            {
+              "text": "CharacterGLM-6B FastApi部署调用",
+              "link": "/models/CharacterGLM/02-CharacterGLM-6B FastApi部署调用"
+            },
+            {
+              "text": "CharacterGLM-6B-chat",
+              "link": "/models/CharacterGLM/03-CharacterGLM-6B-chat"
+            },
+            {
+              "text": "04-CharacterGLM-6B-Chat Lora微调",
+              "link": "/models/CharacterGLM/04-CharacterGLM-6B-Lora微调"
+            },
+            {
+              "text": "CharacterGLM-6B",
+              "link": "/models/CharacterGLM/readme"
+            }
+          ]
+        },
+        {
+          "text": "GLM-4",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "GLM-4-9B-chat FastApi 部署调用",
+              "link": "/models/GLM-4/01-GLM-4-9B-chat-FastApi-部署调用"
+            },
+            {
+              "text": "GLM-4-9b-Chat 接入 LangChain",
+              "link": "/models/GLM-4/02-GLM-4-9B-chat-langchain-接入"
+            },
+            {
+              "text": "GLM-4-9B-Chat WebDemo 部署",
+              "link": "/models/GLM-4/03-GLM-4-9B-Chat-WebDemo"
+            },
+            {
+              "text": "04-GLM-4-9B-Chat vLLM 部署调用",
+              "link": "/models/GLM-4/04-GLM-4-9B-Chat-vLLM-部署调用"
+            },
+            {
+              "text": "GLM4-9B-chat Lora 微调.",
+              "link": "/models/GLM-4/05-GLM-4-9B-chat-Lora-微调"
+            },
+            {
+              "text": "GLM4-9B-chat-hf Lora 微调.",
+              "link": "/models/GLM-4/05-GLM-4-9B-chat-hf-Lora-微调"
+            }
+          ]
+        },
+        {
+          "text": "GLM-4.1V-Thinking",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "01-GLM-4.1V-Thinking vLLM部署调用",
+              "link": "/models/GLM-4.1V-Thinking/01-GLM-4-1V-Thinking-vLLM部署调用"
+            },
+            {
+              "text": "02-GLM-4.1V-Thinking Gradio部署",
+              "link": "/models/GLM-4.1V-Thinking/02-GLM-4-1V-Thinking-Gradio部署"
+            },
+            {
+              "text": "03-GLM-4.1V-Thinking LoRA 及 SwanLab 可视化记录",
+              "link": "/models/GLM-4.1V-Thinking/03-GLM-4-1V-Thinking-LoRA-及-SwanLab-可视化记录"
+            }
+          ]
+        },
+        {
+          "text": "GLM-4.5-Air",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "01-GLM-4.5-Air vLLM 部署调用",
+              "link": "/models/GLM-4.5-Air/01-GLM-4.5-Air-vLLM-部署调用"
+            },
+            {
+              "text": "02-GLM-4.5-Air EvalScope 智商情商&&并发评测",
+              "link": "/models/GLM-4.5-Air/02-GLM-4.5-Air-EvalScope-并发测试"
+            },
+            {
+              "text": "03-GLM-4.5-Air-LoRA 及 SwanLab 可视化记录",
+              "link": "/models/GLM-4.5-Air/03-GLM-4.5-Air-Lora-及-Swanlab-可视化微调"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "InternLM 系列",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "InternLM",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "InternLM-Chat-7B Transformers 部署调用",
+              "link": "/models/InternLM/01-InternLM-Chat-7B-Transformers-部署调用"
+            },
+            {
+              "text": "internLM-Chat-7B FastApi 部署调用",
+              "link": "/models/InternLM/02-internLM-Chat-7B-FastApi"
+            },
+            {
+              "text": "InternLM-Chat-7B 对话 Web",
+              "link": "/models/InternLM/03-InternLM-Chat-7B"
+            },
+            {
+              "text": "Lagent+InternLM-Chat-7B-V1.1",
+              "link": "/models/InternLM/04-Lagent+InternLM-Chat-7B-V1.1"
+            },
+            {
+              "text": "浦语灵笔图文理解&创作",
+              "link": "/models/InternLM/05-浦语灵笔图文理解&创作"
+            },
+            {
+              "text": "基于 InternLM 和 LangChain 搭建知识库助手",
+              "link": "/models/InternLM/06-InternLM接入LangChain搭建知识库助手"
+            }
+          ]
+        },
+        {
+          "text": "InternLM2",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "InternLM2-7B-chat FastAPI 部署",
+              "link": "/models/InternLM2/01-InternLM2-7B-chat-FastAPI部署"
+            },
+            {
+              "text": "InternLM2-7B-chat langchain 接入",
+              "link": "/models/InternLM2/02-InternLM2-7B-chat-langchain-接入"
+            },
+            {
+              "text": "InternLM2-7B-chat WebDemo 部署",
+              "link": "/models/InternLM2/03-InternLM2-7B-chat-WebDemo-部署"
+            },
+            {
+              "text": "InternLM2-7B-chat Xtuner Qlora 微调",
+              "link": "/models/InternLM2/04-InternLM2-7B-chat-Xtuner-Qlora-微调"
+            }
+          ]
+        },
+        {
+          "text": "InternLM3",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "InternLM3-8B-instruct FastAPI部署",
+              "link": "/models/InternLM3/01-InternLM3-8B-Instruct-FastAPI"
+            },
+            {
+              "text": "InternLM3-8B-Instruct Langchain 接入",
+              "link": "/models/InternLM3/02-internlm3-8b-Instruct-Langchain-接入"
+            },
+            {
+              "text": "InternLM3-8B-Instruct WebDemo 部署",
+              "link": "/models/InternLM3/03-InternLM3-8B-Instruct-WebDemo部署"
+            },
+            {
+              "text": "InternLM3-8b-Instruct LoRA 微调",
+              "link": "/models/InternLM3/04-InternLM3-8B-Instruct-LoRA"
+            },
+            {
+              "text": "internlm3-8b-instruct 与o1",
+              "link": "/models/InternLM3/05-internlm3-8b-instruct-与o1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "LLaMA 系列",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "LLaMA3",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Llama-3-8B-Instruct FastApi 部署调用",
+              "link": "/models/LLaMA3/01-LLaMA3-8B-Instruct-FastApi-部署调用"
+            },
+            {
+              "text": "LLaMA3-8B-Instruct langchain 接入",
+              "link": "/models/LLaMA3/02-LLaMA3-8B-Instruct-langchain-接入"
+            },
+            {
+              "text": "LLaMA3-8B-Instruct WebDemo 部署",
+              "link": "/models/LLaMA3/03-LLaMA3-8B-Instruct-WebDemo-部署"
+            },
+            {
+              "text": "LLaMA3-8B-Instruct Lora 微调",
+              "link": "/models/LLaMA3/04-LLaMA3-8B-Instruct-Lora-微调"
+            }
+          ]
+        },
+        {
+          "text": "Llama3_1",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Llama3_1-8B-Instruct FastApi 部署调用",
+              "link": "/models/Llama3_1/01-Llama3_1-8B-Instruct-FastApi-部署调用"
+            },
+            {
+              "text": "LLaMA3_1-8B-Instruct langchain 接入",
+              "link": "/models/Llama3_1/02-Llama3_1-8B-Instruct-langchain接入"
+            },
+            {
+              "text": "LLaMA3_1-8B-Instruct WebDemo 部署",
+              "link": "/models/Llama3_1/03-Llama3_1-8B-Instruct-WebDemo部署"
+            },
+            {
+              "text": "LLaMA3_1-8B-Instruct Lora 微调",
+              "link": "/models/Llama3_1/04-Llama3_1-8B--Instruct-Lora-微调"
+            },
+            {
+              "text": "05-Llama3_1-8B-Instruct o1-like 推理链实现",
+              "link": "/models/Llama3_1/05-Llama3_1-8B-Instruct-o1-like-推理链实现"
+            },
+            {
+              "text": "llm #ollama #LoRA部署",
+              "link": "/models/Llama3_1/动手转换GGUF模型并使用Ollama本地部署"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "DeepSeek 系列",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "DeepSeek",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "DeepSeek-7B-chat FastApi 部署调用",
+              "link": "/models/DeepSeek/01-DeepSeek-7B-chat-FastApi"
+            },
+            {
+              "text": "DeepSeek-7B-chat langchain 接入",
+              "link": "/models/DeepSeek/02-DeepSeek-7B-chat-langchain"
+            },
+            {
+              "text": "DeepSeek-7B-chat WebDemo 部署",
+              "link": "/models/DeepSeek/03-DeepSeek-7B-chat-WebDemo"
+            },
+            {
+              "text": "DeepSeek-7B-chat Lora 微调",
+              "link": "/models/DeepSeek/04-DeepSeek-7B-chat-Lora-微调"
+            },
+            {
+              "text": "DeepSeek-7B-chat 4bits量化 QLora 微调",
+              "link": "/models/DeepSeek/05-DeepSeek-7B-chat-4bits量化-Qlora-微调"
+            },
+            {
+              "text": "06-DeepSeek-MoE-16b-chat FastApi 部署调用",
+              "link": "/models/DeepSeek/06-DeepSeek-MoE-16b-chat FastApi部署调用"
+            },
+            {
+              "text": "DeepSeek-MoE-16b-chat Transformers 部署调用",
+              "link": "/models/DeepSeek/06-DeepSeek-MoE-16b-chat-Transformer部署调用"
+            }
+          ]
+        },
+        {
+          "text": "DeepSeek-Coder-V2",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "DeepSeek-Coder-V2-Lite-Instruct FastApi 部署调用",
+              "link": "/models/DeepSeek-Coder-V2/01-DeepSeek-Coder-V2-Lite-Instruct-FastApi-部署调用"
+            },
+            {
+              "text": "DeepSeek-Coder-V2-Lite-Instruct 接入 LangChain",
+              "link": "/models/DeepSeek-Coder-V2/02-DeepSeek-Coder-V2-Lite-Instruct-接入-LangChain"
+            },
+            {
+              "text": "DeepSeek-Coder-V2-Lite-Instruct WebDemo 部署",
+              "link": "/models/DeepSeek-Coder-V2/03-DeepSeek-Coder-V2-Lite-Instruct-WebDemo-部署"
+            },
+            {
+              "text": "DeepSeek-Coder-V2-Lite-Instruct Lora 微调",
+              "link": "/models/DeepSeek-Coder-V2/04-DeepSeek-Coder-V2-Lite-Instruct-Lora-微调"
+            }
+          ]
+        },
+        {
+          "text": "DeepSeek-R1-Distill-Qwen",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "DeepSeek-R1-Distill-Qwen-7B FastApi 部署调用",
+              "link": "/models/DeepSeek-R1-Distill-Qwen/01-DeepSeek-R1-Distill-Qwen-7B-FastApi-部署调用"
+            },
+            {
+              "text": "DeepSeek-R1-Distill-Qwen-7B Langchain 接入",
+              "link": "/models/DeepSeek-R1-Distill-Qwen/02-DeepSeek-R1-Distill-Qwen-7B-Langchain-接入"
+            },
+            {
+              "text": "DeepSeek-R1-Distill-Qwen-7B WebDemo 部署",
+              "link": "/models/DeepSeek-R1-Distill-Qwen/03-DeepSeek-R1-Distill-Qwen-7B-WebDemo-部署"
+            },
+            {
+              "text": "04-DeepSeek-R1-Distill-Qwen-7B vLLM 部署调用",
+              "link": "/models/DeepSeek-R1-Distill-Qwen/04-DeepSeek-R1-Distill-Qwen-7B-vLLM-部署调用"
+            },
+            {
+              "text": "DeepSeek-R1-Distill-Qwen3-8B GRPO微调教程",
+              "link": "/models/DeepSeek-R1-Distill-Qwen/05-DeepSeek-R1-0528-Qwen3-8B-GRPO及swanlab可视化"
+            },
+            {
+              "text": "readme",
+              "link": "/models/DeepSeek-R1-Distill-Qwen/readme"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Gemma 系列",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Gemma",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "01-Gemma-2B-Instruct FastApi 部署调用",
+              "link": "/models/Gemma/01-Gemma-2B-Instruct-FastApi-部署调用"
+            },
+            {
+              "text": "Gemma-2B langchain 接入",
+              "link": "/models/Gemma/02-Gemma-2B-Instruct-langchain-接入"
+            },
+            {
+              "text": "03-Gemma-2B-Chat WebDemo 部署",
+              "link": "/models/Gemma/03-Gemma-2B-Instruct-WebDemo-部署"
+            },
+            {
+              "text": "Gemma2b-Instruct Lora 微调",
+              "link": "/models/Gemma/04-Gemma-2B-Instruct-Lora微调"
+            }
+          ]
+        },
+        {
+          "text": "Gemma2",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Gemma-2-9b-it FastApi 部署调用",
+              "link": "/models/Gemma2/01-Gemma-2-9b-it-FastApi-部署调用"
+            },
+            {
+              "text": "02-Gemma-2-9b-it langchain 接入",
+              "link": "/models/Gemma2/02-Gemma-2-9b-it-langchain-接入"
+            },
+            {
+              "text": "Yuan2.0-2B WebDemo部署",
+              "link": "/models/Gemma2/03-Gemma-2-9b-it-WebDemo-部署"
+            },
+            {
+              "text": "Gemma-2-9b-it peft lora微调",
+              "link": "/models/Gemma2/04-Gemma-2-9b-it-peft-lora微调"
+            }
+          ]
+        },
+        {
+          "text": "Gemma3",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "gemma-3-4b-it FastApi 部署调用",
+              "link": "/models/Gemma3/01-gemma-3-4b-it-FastApi-部署调用"
+            },
+            {
+              "text": "ollama + open-webui 部署 gemma 3-4b 模型",
+              "link": "/models/Gemma3/03-gemma-3-4b-it-ollama-+-open-webui部署"
+            },
+            {
+              "text": "04-Gemma3-4b  evalscope智商情商评测",
+              "link": "/models/Gemma3/04-Gemma3-4b--evalscope智商情商评测"
+            },
+            {
+              "text": "05-gemma-3-4b-it LoRA 微调",
+              "link": "/models/Gemma3/05-gemma-3-4b-it-LoRA"
+            },
+            {
+              "text": "Gemma3-4B GRPO微调教程",
+              "link": "/models/Gemma3/6-gemma3-4B-itGRPO微调及通过swanlab可视化"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "MiniCPM 系列",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "MiniCPM",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "MiniCPM-2B-chat FastApi 部署调用",
+              "link": "/models/MiniCPM/MiniCPM-2B-chat-FastApi-部署调用"
+            },
+            {
+              "text": "MiniCPM-2B-chat transformers 部署调用",
+              "link": "/models/MiniCPM/MiniCPM-2B-chat-Lora-&&-Full-微调"
+            },
+            {
+              "text": "MiniCPM-2B-chat WebDemo部署",
+              "link": "/models/MiniCPM/MiniCPM-2B-chat-WebDemo部署"
+            },
+            {
+              "text": "MiniCPM-2B-chat transformers 部署调用",
+              "link": "/models/MiniCPM/MiniCPM-2B-chat-langchain接入"
+            },
+            {
+              "text": "MiniCPM-2B-chat transformers 部署调用",
+              "link": "/models/MiniCPM/MiniCPM-2B-chat-transformers-部署调用"
+            }
+          ]
+        },
+        {
+          "text": "MiniCPM-o",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "MiniCPM-o 2.6 FastApi部署调用",
+              "link": "/models/MiniCPM-o/01-MiniCPM-o-2.6-FastApi部署调用"
+            },
+            {
+              "text": "InternLM3-8B-Instruct WebDemo 部署",
+              "link": "/models/MiniCPM-o/02minicpm-o-2.6WebDemo部署"
+            },
+            {
+              "text": "MiniCPM-o-2.6 多模态语音能力",
+              "link": "/models/MiniCPM-o/03-MiniCPM-o-2.6-多模态语音能力"
+            },
+            {
+              "text": "MiniCPM-o-2.6 Lora 微调",
+              "link": "/models/MiniCPM-o/04-MiniCPM-0-2.6-Lora微调"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Yuan 系列",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Yuan2.0",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Yuan2.0-2B FastApi 部署调用",
+              "link": "/models/Yuan2.0/01-Yuan2.0-2B-FastApi-部署调用"
+            },
+            {
+              "text": "Yuan2.0-2B 接入 LangChain 搭建知识库助手",
+              "link": "/models/Yuan2.0/02-Yuan2.0-2B-Langchain-接入"
+            },
+            {
+              "text": "Yuan2.0-2B WebDemo部署",
+              "link": "/models/Yuan2.0/03-Yuan2.0-2B-WebDemo部署"
+            },
+            {
+              "text": "基于vLLM的Yuan 2.0推理服务部署",
+              "link": "/models/Yuan2.0/04-Yuan2.0-2B-vLLM部署调用"
+            },
+            {
+              "text": "Yuan2.0-2B Lora微调",
+              "link": "/models/Yuan2.0/05-Yuan2.0-2B-Lora微调"
+            }
+          ]
+        },
+        {
+          "text": "Yuan2.0-M32",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Yuan2.0-M32 FastApi 部署调用",
+              "link": "/models/Yuan2.0-M32/01-Yuan2.0-M32-FastApi-部署调用"
+            },
+            {
+              "text": "Yuan2.0-M32 接入 LangChain 搭建知识库助手",
+              "link": "/models/Yuan2.0-M32/02-Yuan2.0-M32-Langchain-接入"
+            },
+            {
+              "text": "Yuan2.0-M32 WebDemo部署",
+              "link": "/models/Yuan2.0-M32/03-Yuan2.0-M32-WebDemo部署"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Hunyuan 系列",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Hunyuan-A13B-Instruct",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "01-Hunyuan-A13B-Instruct 模型架构解析 Blog",
+              "link": "/models/Hunyuan-A13B-Instruct/01-Hunyuan-A13B-Instruct-模型架构解析-Blog"
+            },
+            {
+              "text": "02-Hunyuan-A13B-Instruct-vLLM",
+              "link": "/models/Hunyuan-A13B-Instruct/02-Hunyuan-A13B-Instruct-vLLM"
+            },
+            {
+              "text": "03-Hunyuan-A13B-Instruct-SGLang部署调用",
+              "link": "/models/Hunyuan-A13B-Instruct/03-Hunyuan-A13B-Instruct-SGLang部署调用"
+            },
+            {
+              "text": "04-Hunyuan-A13B-Instruct EvalScope 并发测试",
+              "link": "/models/Hunyuan-A13B-Instruct/04-Hunyuan-A13B-Instruct-EvalScope-并发测试"
+            },
+            {
+              "text": "Hunyuan-A13B-Instruct-LoRA 及 SwanLab 可视化记录",
+              "link": "/models/Hunyuan-A13B-Instruct/05-Hunyuan-A13B-Instruct-LoRA及SwanLab可视化记录"
+            }
+          ]
+        },
+        {
+          "text": "Hunyuan3D-2",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Hunyuan3D-2.0系列模型部署",
+              "link": "/models/Hunyuan3D-2/01-Hunyuan3D-2-系列模型部署"
+            },
+            {
+              "text": "Hunyuan3D-2系列模型代码调用",
+              "link": "/models/Hunyuan3D-2/02-Hunyuan3D-2-系列模型代码调用"
+            },
+            {
+              "text": "Hunyuan3D-2系列Gradio App",
+              "link": "/models/Hunyuan3D-2/03-Hunyuan3D-2-系列模型Gradio部署"
+            },
+            {
+              "text": "Hunyuan3D-2系列 API Server",
+              "link": "/models/Hunyuan3D-2/04-Hunyuan3D-2-系列模型API-Server"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "其他模型",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Atom",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Atom-7B-chat",
+              "link": "/models/Atom/01-Atom-7B-chat-WebDemo"
+            },
+            {
+              "text": "Atom-7B-Chat 的 Lora 指令微调",
+              "link": "/models/Atom/02-Atom-7B-Chat-Lora-微调"
+            },
+            {
+              "text": "Atom-7B-Chat 接入langchain搭建知识库助手",
+              "link": "/models/Atom/03-Atom-7B-Chat-接入langchain搭建知识库助手"
+            },
+            {
+              "text": "Atom-7B-chat 全量微调",
+              "link": "/models/Atom/04-Atom-7B-chat-全量微调"
+            }
+          ]
+        },
+        {
+          "text": "BaiChuan",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Baichuan2-7B-chat FastApi 部署调用",
+              "link": "/models/BaiChuan/01-Baichuan2-7B-chat+FastApi+部署调用"
+            },
+            {
+              "text": "Baichuan-7B-chat WebDemo 部署调用",
+              "link": "/models/BaiChuan/02-Baichuan-7B-chat+WebDemo"
+            },
+            {
+              "text": "Baichuan2-7B-chat langchain 接入",
+              "link": "/models/BaiChuan/03-Baichuan2-7B-chat接入LangChain框架"
+            },
+            {
+              "text": "Baichuan2-7B-chat lora 微调",
+              "link": "/models/BaiChuan/04-Baichuan2-7B-chat+lora+微调"
+            }
+          ]
+        },
+        {
+          "text": "BlueLM",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "BlueLM-7B-Chat FastApi 部署",
+              "link": "/models/BlueLM/01-BlueLM-7B-Chat-FastApi-部署"
+            },
+            {
+              "text": "BlueLM-7B-Chat langchain 接入",
+              "link": "/models/BlueLM/02-BlueLM-7B-Chat-langchain-接入"
+            },
+            {
+              "text": "BlueLM-7B-Chat WebDemo 部署",
+              "link": "/models/BlueLM/03-BlueLM-7B-Chat-WebDemo-部署"
+            },
+            {
+              "text": "BlueLM-7B-Chat Lora 微调",
+              "link": "/models/BlueLM/04-BlueLM-7B-Chat-Lora-微调"
+            }
+          ]
+        },
+        {
+          "text": "ERNIE-4.5",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "01-ERNIE-4.5-0.3B-PT Lora 微调及 SwanLab 可视化记录",
+              "link": "/models/ERNIE-4.5/01-ERNIE-4.5-0.3B-PT-Lora-微调及-SwanLab-可视化记录"
+            }
+          ]
+        },
+        {
+          "text": "Kimi-VL",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Kimi-VL-多模态推理对话助手",
+              "link": "/models/Kimi-VL/01-Kimi-VL-对话助手"
+            },
+            {
+              "text": "Kimi-VL技术报告解读",
+              "link": "/models/Kimi-VL/02-Kimi-VL-技术报告解读"
+            }
+          ]
+        },
+        {
+          "text": "MiniMax-M2",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "2-MiniMax-M2 模型架构解析 Blog",
+              "link": "/models/MiniMax-M2/1-MiniMax-M2-Blog"
+            },
+            {
+              "text": "2-MiniMax-M2 vLLM 部署调用",
+              "link": "/models/MiniMax-M2/2-MiniMax-M2-vLLM"
+            },
+            {
+              "text": "3-MiniMax-M2 SGLang 部署调用",
+              "link": "/models/MiniMax-M2/3-MiniMax-M2-SGLang"
+            },
+            {
+              "text": "4-MiniMax-M2 EvalScope",
+              "link": "/models/MiniMax-M2/4-MiniMax-M2-EvalScope"
+            }
+          ]
+        },
+        {
+          "text": "OpenELM",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Qwen2-7B-Instruct FastApi 部署调用",
+              "link": "/models/OpenELM/01-OpenELM-3B-Instruct FastApi部署调用"
+            },
+            {
+              "text": "OpenELM-3B-Instruct Lora 微调",
+              "link": "/models/OpenELM/02-OpenELM-3B-Instruct-Lora微调"
+            }
+          ]
+        },
+        {
+          "text": "SpatialLM",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "SpatialLM 3D点云理解与目标检测模型部署",
+              "link": "/models/SpatialLM/readme"
+            }
+          ]
+        },
+        {
+          "text": "TransNormerLLM",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "TransNormerLLM-7B FastApi 部署调用",
+              "link": "/models/TransNormerLLM/01-TransNormerLLM-7B-FastApi-部署调用"
+            },
+            {
+              "text": "TransNormerLLM-7B 接入 LangChain 搭建知识库助手",
+              "link": "/models/TransNormerLLM/02-TransNormerLLM-7B-接入langchain搭建知识库助手"
+            },
+            {
+              "text": "TransNormerLLM-7B WebDemo 部署",
+              "link": "/models/TransNormerLLM/03-TransNormerLLM-7B-WebDemo"
+            },
+            {
+              "text": "TransNormerLLM-7B Lora 微调",
+              "link": "/models/TransNormerLLM/04-TrasnNormerLLM-7B-Lora-微调"
+            }
+          ]
+        },
+        {
+          "text": "XVERSE",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "XVERSE-7B-chat Transformers 推理",
+              "link": "/models/XVERSE/01-XVERSE-7B-chat-Transformers推理"
+            },
+            {
+              "text": "XVERSE-7B-chat FastAPI 部署",
+              "link": "/models/XVERSE/02-XVERSE-7B-chat-FastAPI部署"
+            },
+            {
+              "text": "XVERSE-7B-chat langchain 接入",
+              "link": "/models/XVERSE/03-XVERSE-7B-chat-langchain-接入"
+            },
+            {
+              "text": "XVERSE-7B-chat WebDemo 部署",
+              "link": "/models/XVERSE/04-XVERSE-7B-chat-WebDemo-部署"
+            },
+            {
+              "text": "XVERSE-7B-Chat Lora 微调",
+              "link": "/models/XVERSE/05-XVERSE-7B-Chat-Lora-微调"
+            },
+            {
+              "text": "XVERSE-MoE-A4.2B Transformers 部署调用",
+              "link": "/models/XVERSE/06-XVERSE-MoE-A4.2B"
+            }
+          ]
+        },
+        {
+          "text": "Yi",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Yi-6B-Chat FastApi 部署调用",
+              "link": "/models/Yi/01-Yi-6B-Chat-FastApi-部署调用"
+            },
+            {
+              "text": "Yi-6B-Chat 接入 LangChain 搭建知识库助手",
+              "link": "/models/Yi/02-Yi-6B-Chat-接入langchain搭建知识库助手"
+            },
+            {
+              "text": "Yi-6B-chat WebDemo 部署",
+              "link": "/models/Yi/03-Yi-6B-chat-WebDemo"
+            },
+            {
+              "text": "04-Yi-6B-Chat Lora 微调",
+              "link": "/models/Yi/04-Yi-6B-Chat-Lora-微调"
+            }
+          ]
+        },
+        {
+          "text": "bilibili_Index-1.9B",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Index-1.9B-Chat FastApi 部署调用",
+              "link": "/models/bilibili_Index-1.9B/01-Index-1.9B-chat-FastApi-部署调用"
+            },
+            {
+              "text": "Index-1.9B-Chat LangChain 接入",
+              "link": "/models/bilibili_Index-1.9B/02-Index-1.9B-Chat-LangChain-接入"
+            },
+            {
+              "text": "Index-1.9B-Chat WebDemo 部署",
+              "link": "/models/bilibili_Index-1.9B/03-Index-1.9B-Chat-WebDemo-部署"
+            },
+            {
+              "text": "Index-1.9B-Chat Lora 微调",
+              "link": "/models/bilibili_Index-1.9B/04-Index-1.9B-Chat-Lora-微调"
+            }
+          ]
+        },
+        {
+          "text": "gpt-oss",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "**01-GPT-OSS-20b** **vLLM** **部署调用**",
+              "link": "/models/gpt-oss/1-gpt-oss-20b-vllm-部署调用"
+            },
+            {
+              "text": "02-gpt-oss-20b EvalScope 评测",
+              "link": "/models/gpt-oss/2-gpt-oss-20b-Evalscope并发测试"
+            },
+            {
+              "text": "03-gpt-oss-20b lmstudio 本地部署调用",
+              "link": "/models/gpt-oss/3-gpt-oss-20b-lmstudio-本地部署调用"
+            },
+            {
+              "text": "04-gpt-oss-20b Lora微调以及Swanlab可视化",
+              "link": "/models/gpt-oss/4-gpt-oss-20b-Lora-微调及-SwanLab-可视化记录"
+            },
+            {
+              "text": "05-gpt-oss-20b DPO微调以及Swanlab可视化",
+              "link": "/models/gpt-oss/5-gpt-oss-20b-DPO-微调及-SwanLab-可视化记录"
+            }
+          ]
+        },
+        {
+          "text": "phi-3",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Phi-3-mini-4k-instruct FastApi 部署调用",
+              "link": "/models/phi-3/01-Phi-3-mini-4k-instruct-FastApi-部署调用"
+            },
+            {
+              "text": "Phi-3-mini-4k-instruct langchain 接入",
+              "link": "/models/phi-3/02-Phi-3-mini-4k-instruct-langchain-接入"
+            },
+            {
+              "text": "Phi-3-mini-4k-instruct WebDemo 部署",
+              "link": "/models/phi-3/03-Phi-3-mini-4k-instruct-WebDemo部署"
+            },
+            {
+              "text": "Phi-3-mini-4k-Instruct Lora 微调",
+              "link": "/models/phi-3/04-Phi-3-mini-4k-Instruct-Lora-微调"
+            }
+          ]
+        },
+        {
+          "text": "phi4",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Phi-4 FastApi 部署调用",
+              "link": "/models/phi4/01-Phi-4-FastApi-部署调用"
+            },
+            {
+              "text": "Phi-4 Langchain接入",
+              "link": "/models/phi4/02-Phi-4-Langchain接入"
+            },
+            {
+              "text": "Phi-4 WebDemo 部署",
+              "link": "/models/phi4/03-Phi-4-WebDemo部署"
+            },
+            {
+              "text": "Phi-4 Lora 微调",
+              "link": "/models/phi4/04-Phi-4-Lora-微调"
+            },
+            {
+              "text": "Phi-4 Lora 微调 命名实体识别任务 SwanLab 可视化记录版",
+              "link": "/models/phi4/05-Phi-4-Lora-微调-命名实体识别"
+            },
+            {
+              "text": "Gemma3-4B GRPO微调教程",
+              "link": "/models/phi4/06-Phi-4-GRPO及swanlab可视化"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -258,7 +258,7 @@ xtuner convert merge \
 XTuner 训练多轮对话模型时，采取了一种更加充分高效的方法，如下图所示。
 
 <div align="center">
-<img src="https://github.com/LZHgrla/xtuner/assets/36994684/ec67b610-a3b2-4fa7-91ad-a9a235fdb820" alt="Image" width=1100" />
+<img src="https://github.com/LZHgrla/xtuner/assets/36994684/ec67b610-a3b2-4fa7-91ad-a9a235fdb820" alt="Image" width="1100" />
 </div>
 
 我们将多轮对话进行拼接，之后输入模型，并行计算每个位置的 loss，而只有 Output 部分的 loss 参与回传。

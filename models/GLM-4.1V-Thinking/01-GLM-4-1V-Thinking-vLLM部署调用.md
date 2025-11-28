@@ -379,8 +379,8 @@ messages = [
 
 示例使用的图像如下所示：
 <div style="display: flex; justify-content: center; gap: 20px; margin: 20px 0;">
-    <img src="images/image-8.jpg" alt="image-8" style="width: 300px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-    <img src="images/image-9.jpg" alt="image-9" style="width: 300px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <img src="./images/image-8.jpg" alt="image-8" style="width: 300px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <img src="./images/image-9.jpg" alt="image-9" style="width: 300px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
 </div>
 
 执行代码结果如下：

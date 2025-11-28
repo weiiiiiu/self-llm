@@ -34,7 +34,7 @@ git clone https://github.com/Tencent/Hunyuan3D-2.git
 git clone https://gitclone.com/github.com/Tencent/Hunyuan3D-2.git
 ```
 
-![image%201.png](images/image%201.png)
+<!-- ![image%201.png](images/image%201.png) Image missing -->
 
 ### 安装环境依赖
 
@@ -91,4 +91,4 @@ model_dir = snapshot_download('AI-ModelScope/Hunyuan3D-2', cache_dir='/root/auto
 
 截至2025.3.20，Hunyuan3D-2模型仓库大小约为56GB，Hunyuan3D-2mv为28GB，Hunyuan3D-2mini为23GB，请参考官方运行硬件要求以及显存消耗拉取所需模型仓库，完整拉取供需106GB硬盘空间
 
-![image%202.pngg](images/image%202.png)
+<!-- ![image%202.pngg](images/image%202.png) Image missing -->

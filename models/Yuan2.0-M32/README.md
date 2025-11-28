@@ -20,12 +20,12 @@
 
 
 <div align=center>
-  <img src=images/yuan2.0-m32-0.jpg >
+  <img src="./images/yuan2.0-m32-0.jpg" >
   <p>Fig.1: 源2.0-M32 架构图</p>
 </div>
 
 <div align=center>
-  <img src=images/yuan2.0-m32-1.jpg >
+  <img src="./images/yuan2.0-m32-1.jpg" >
   <p>Fig.2: 源2.0-M32业界主流评测任务表现</p>
 </div>
 
@@ -57,7 +57,7 @@ Yuan2.0-M32提供了多种模型格式，下载链接如下表所示：
 使用3090部署Yuan2-M32-HF-INT4的显存占用如下图所示：
 
 <div align=center>
-  <img src=images/gpu.png >
+  <img src="./images/gpu.png" >
   <p>Fig.2: Yuan2-M32-HF-INT4 显存占用</p>
 </div>
 

@@ -12,12 +12,12 @@
 算法方面，源2.0提出并采用了一种新型的注意力算法结构：局部注意力过滤增强机制(LFA：Localized Filtering-based Attention)。LFA通过先学习相邻词之间的关联性，然后再计算全局关联性的方法，能够更好地学习到自然语言的局部和全局的语言特征，对于自然语言的关联语义理解更准确、更人性，提升了模型的自然语言表达能力，进而提升了模型精度。
 
 <div align=center>
-  <img src=images/yuan2.0-0.png >
+  <img src="./images/yuan2.0-0.png" >
   <p>Fig.1: 源2.0 架构和LFA</p>
 </div>
 
 <div align=center>
-  <img src=images/yuan2.0-1.jpg >
+  <img src="./images/yuan2.0-1.jpg" >
   <p>Fig.2: 源2.0业界主流评测任务表现</p>
 </div>
 

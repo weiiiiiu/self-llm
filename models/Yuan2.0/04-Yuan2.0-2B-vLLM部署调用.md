@@ -121,7 +121,7 @@ print("inference_time:", (end_time - start_time))
 python -m vllm.entrypoints.api_server --model=/root/autodl-fs/YuanLLM/Yuan2-2B-Mars-hf --trust-remote-code
 ```
 
-![](images/05-0.png)
+<!-- <!-- ![](images/05-0.png) Image missing --> Image file missing -->
 
 #### 2. 服务调用
 服务调用有以下两种方式：第一种是通过命令行直接调用；第二种方式是通过运行脚本批量调用。
@@ -171,7 +171,7 @@ print(output)
 python -m vllm.entrypoints.openai.api_server --model=/root/autodl-fs/YuanLLM/Yuan2-2B-Mars-hf --trust-remote-code
 ```
 
-![](images/05-1.png)
+<!-- <!-- ![](images/05-1.png) Image missing --> Image file missing -->
 
 
 #### 2. 服务调用
